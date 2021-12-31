@@ -4,11 +4,13 @@
     ["multiconsult","hjemmekontor","fullstack", "900 000"],
 
     ["capgemini", "kontor", "backend", "600 000"]
-]
-*/
-let tittel = ["Jobb", "Kontortype", "Jobbtittel", "Lønn (netto)"]
+]*/
+
+let tittel = ["Arbeidsplass", "Kontortype", "Jobbtittel", "Lønn (netto)"]
 
 let jobber = []
+
+console.log(jobber)
 
 function output_tbody()
 {
