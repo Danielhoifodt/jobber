@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <title>Jobb oversikt</title>
 </head>
 <body>
     <div class="container">
-        <h1 class="heading mt-5 mb-5" style="text-align: center;text-decoration: underline;">Jobb oversikt</h1>
+        <h1 class="heading mt-5" style="text-align: center;text-decoration: underline;">Jobb oversikt</h1>
+        <div style="display:grid; height:100px;width:100%">
+          <i style="margin:auto 5% auto auto; cursor:pointer;" class="fas fa-plus fa-3x" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+        </div>
         <div class="modal" id="exampleModal" tabindex="-1">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Sett in i tabell</h5>
+                  <h5 class="modal-title">Sett inn i tabell</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Jobb</label>
+                          <label for="exampleInputEmail1" class="form-label">Arbeidsplass</label>
                           <input type="text" class="form-control" id="jobb" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Type</label>
+                          <label for="exampleInputPassword1" class="form-label">Kontortype</label>
                           <input type="text" class="form-control" id="type">
                         </div>
                         <div class="mb-3">
@@ -33,7 +38,7 @@
                             <input type="text" class="form-control" id="posisjon">
                           </div>
                           <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Lønn(NOK)</label>
+                            <label for="exampleInputPassword1" class="form-label">Lønn (netto)</label>
                             <input type="text" class="form-control" id="lønn">
                           </div>
                       </form>
@@ -51,9 +56,6 @@
         </thead>
         <tbody id="output_tbody"></tbody>
     </table>
-    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float:right;">
-        Sett inn
-      </button>
 </div>
     <script src="jobber.js"></script>
     
