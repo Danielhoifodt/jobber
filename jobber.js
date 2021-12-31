@@ -1,11 +1,3 @@
-/*let jobber =[
-    ["netsense","delt","under opplæring", 0],
-
-    ["multiconsult","hjemmekontor","fullstack", "900 000"],
-
-    ["capgemini", "kontor", "backend", "600 000"]
-]*/
-
 let tittel = ["Arbeidsplass", "Kontortype", "Jobbtittel", "Lønn (netto)"]
 
 let jobber = []
