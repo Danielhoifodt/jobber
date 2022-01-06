@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1 class="heading mt-5" style="text-align: center;text-decoration: underline;">Jobb oversikt</h1>
-        <div style="display:grid; height:100px;width:100%">
+        <div style="display:grid; height:100px;width:100%">         
           <i style="margin:auto; cursor:pointer;" class="fas fa-plus-square fa-3x" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
         </div>
         <div class="modal" id="exampleModal" tabindex="-1">
@@ -26,19 +26,19 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Arbeidsplass</label>
-                          <input type="text" class="form-control" id="jobb" aria-describedby="emailHelp">
+                          <label for="jobb" class="form-label">Arbeidsplass</label>
+                          <input type="text" class="form-control" id="jobb">
                         </div>
                         <div class="mb-3">
-                          <label for="exampleInputPassword1" class="form-label">Kontortype</label>
+                          <label for="type" class="form-label">Kontortype</label>
                           <input type="text" class="form-control" id="type">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Posisjon</label>
+                            <label for="posisjon" class="form-label">Posisjon</label>
                             <input type="text" class="form-control" id="posisjon">
                           </div>
                           <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Lønn (netto)</label>
+                            <label for="lønn" class="form-label">Lønn (netto)</label>
                             <input type="text" class="form-control" id="lønn">
                           </div>
                       </form>
