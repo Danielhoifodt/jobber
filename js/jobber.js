@@ -1,77 +1,84 @@
-let tittel = ["Arbeidsplass", "Kontortype", "Jobbtittel", "Lønn (netto)"]
+const tittel = ["Arbeidsplass", "Kontortype", "Jobbtittel", "Lønn (netto)"]
 
 let jobber = []
 
 console.log(jobber)
 
-function output_tbody()
+function updateTableBody()
 {
-    let tr = ""
+    let tableRow = ""
 
     for(let i = 0; i < jobber.length; i++)
     {
-        let td = ""
+        let tableElement = ""
         for(let j = 0; j < jobber[i].length; j++)
         {
-            td += "<td>" + jobber[i][j] + "</td>"
+            tableElement += "<td>" + jobber[i][j] + "</td>"
         }
-        td += "<td onclick='deleteRow(" + i + ");' style='color:red;cursor:pointer;'>X</td>"
-        tr += "<tr>" + td + "</tr>"
+        tableElement += "<td onclick='deleteRow(" + i + ");' style='color:red;cursor:pointer;'>X</td>"
+        tableRow += "<tr>" + tableElement + "</tr>"
     }
-    document.getElementById("output_tbody").innerHTML = tr
+    document.getElementById("tableBody").innerHTML = tableRow
 }
 
-output_tbody()
 
-function output_thead()
+
+function updateTableHead()
 {
-    let tr = ""
-    let th = ""
+    let tableRow = ""
+    let tableHead = ""
 
     for(let i = 0; i < tittel.length; i++)
     {
-        th += "<th>" + tittel[i] + "</th>"
+        tableHead += "<th>" + tittel[i] + "</th>"
     }
-    th += "<th>Slett</th>"
-    tr = "<tr>" + th + "</tr>"
+    tableHead += "<th>Slett</th>"
+    tableRow = "<tr>" + tableHead + "</tr>"
 
-    document.getElementById("output_thead").innerHTML = tr
+    document.getElementById("tableHead").innerHTML = tableRow
 }
 
-output_thead()
+
 
 function saveModal()
 {
-    let jobb = document.getElementById("jobb").value
-    let type = document.getElementById("type").value
-    let posisjon = document.getElementById("posisjon").value
-    let lønn = document.getElementById("lønn").value
+    const jobb = document.getElementById("jobb").value
+    const type = document.getElementById("type").value
+    const posisjon = document.getElementById("posisjon").value
+    const lønn = document.getElementById("lønn").value
 
-    let aJobber = [jobb, type, posisjon, lønn]
+    if(jobb.length === 0 || type.length === 0 || posisjon.length === 0 || lønn.length === 0) {
+        alert("Alle felter må fylles ut");
+        return
+    }
+
+    const aJobber = [jobb, type, posisjon, lønn]
 
     jobber.push(aJobber)
 
-    output_tbody()
+    updateTableBody()
 
     document.getElementById("jobb").value = ""
     document.getElementById("type").value = ""
     document.getElementById("posisjon").value = ""
     document.getElementById("lønn").value = ""
 
-    hide_modal()
+    hideModal()
 
 }
 
-function hide_modal()
+function hideModal()
 {
-    var myModalEl = document.getElementById('exampleModal');
-    var modal = bootstrap.Modal.getInstance(myModalEl)
+    const myModalEl = document.getElementById('exampleModal');
+    const modal = bootstrap.Modal.getInstance(myModalEl)
     modal.hide();
 }
 
 function deleteRow(index)
 {
     jobber.splice(index, index + 1)
-
-    output_tbody()
+    updateTableBody()
 }
+
+updateTableBody()
+updateTableHead()
